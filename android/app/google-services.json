@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "58615859521",
+    "project_id": "user-manzil",
+    "storage_bucket": "user-manzil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58615859521:android:ff51c2776278b97c86b9c0",
+        "android_client_info": {
+          "package_name": "com.drs.manzil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvfpIzHHifNXDDeCglkAUxPM04NRT1rRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58615859521:android:3274d8e3df8df59e86b9c0",
+        "android_client_info": {
+          "package_name": "com.example.manzil_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58615859521-qbf53s8sd4a2h8ojq2pnisl0ipql4n52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.manzil_admin",
+            "certificate_hash": "14989ffcdc665d6473ff8153355906ef6954a050"
+          }
+        },
+        {
+          "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvfpIzHHifNXDDeCglkAUxPM04NRT1rRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58615859521:android:63b179d4d46fd33986b9c0",
+        "android_client_info": {
+          "package_name": "com.example.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58615859521-dccanibhhid9r9i23j9h45hqc5rlcjt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user",
+            "certificate_hash": "14989ffcdc665d6473ff8153355906ef6954a050"
+          }
+        },
+        {
+          "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvfpIzHHifNXDDeCglkAUxPM04NRT1rRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58615859521-dljimejs7r11650f2bgsu5lsm38rh753.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
