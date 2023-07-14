@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'Network/connectivity_provider.dart';
+import 'bindings/bindings.dart';
 import 'chatCode/Authenticate/Autheticate.dart';
 import 'chatCode/Screens/HomeScreen.dart';
 import 'splashScreen/splash.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: GetMaterialApp(
+        initialBinding: InitialBindings(),
         title: 'Manzil',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
