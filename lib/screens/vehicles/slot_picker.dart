@@ -194,11 +194,11 @@ class _SlotPickerState extends State<SlotPicker> {
                   c.isClicked.value = true;
                   await Future.delayed(Duration(milliseconds: 800));
                   c.isClicked.value = false;
-                  Get.to(PaymentInfo(
-                    Distance: c.selectedDistance.value,
-                    time_slot: c.selectedValue.value,
-                    vehicleType: vehicleType,
-                  ));
+                  Get.to(() => PaymentInfo(
+                        Distance: c.selectedDistance.value,
+                        time_slot: c.selectedValue.value,
+                        vehicleType: vehicleType,
+                      ));
                 },
               ),
             ),

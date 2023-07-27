@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:Manzil/Network/connectivity_provider.dart';
 import 'package:Manzil/Network/no_internet.dart';
 import 'package:Manzil/helper/style.dart';
-
+import 'package:Manzil/helper/constants.dart';
 import '../destination.dart';
 import 'carDetail.dart/carDetails.dart';
 import 'ontroller/controller.dart';
@@ -109,7 +109,7 @@ class CarSelect extends StatelessWidget {
               ],
             ),
             SizedBox(height: size.height / 55),
-            Text("Select Vehicle that drops you at your \"manzil\" ",
+            Text("Select Vehicle that drops you at your \"Sarthi\" ",
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
                     color: Colors.black38,
@@ -162,7 +162,7 @@ class CarSelect extends StatelessWidget {
                                         "${VehicleName[index]}",
                                         style: TextStyle(
                                           fontWeight: FontWeight.w800,
-                                          fontSize: 19,
+                                          fontSize: Constant.width / 20,
                                         ),
                                       ),
                                       SizedBox(
@@ -172,7 +172,7 @@ class CarSelect extends StatelessWidget {
                                         "${VehicleRate[index]}",
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 20,
+                                          fontSize: Constant.width / 25,
                                           color: Colors.deepOrange,
                                           fontFamily: "SquidGames",
                                           letterSpacing: 1,

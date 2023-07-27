@@ -1,5 +1,6 @@
 import 'package:Manzil/Network/connectivity_provider.dart';
 import 'package:Manzil/Network/no_internet.dart';
+import 'package:Manzil/helper/constants.dart';
 import 'package:Manzil/screens/vehicles/ontroller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,7 +49,7 @@ class CarDetails extends StatelessWidget {
                         child: CircularProgressIndicator(),
                       ),
                     )
-                  : Body(size, context, c)
+                  : SingleChildScrollView(child: Body(context, c))
               : NoInternet());
         }
         ;
@@ -61,7 +62,7 @@ class CarDetails extends StatelessWidget {
     ));
   }
 
-  Widget Body(Size size, BuildContext context, Controller c) {
+  Widget Body(BuildContext context, Controller c) {
     return Column(
       children: [
         Stack(alignment: Alignment.bottomLeft, children: [
@@ -82,8 +83,8 @@ class CarDetails extends StatelessWidget {
         //   height: 0,
         // ),
         Container(
-          height: size.height / 2.6,
-          width: size.width,
+          height: Constant.height / 2.0,
+          width: Constant.width,
           child: Card(
               color: Colors.white.withOpacity(1),
               child: Column(
@@ -159,18 +160,21 @@ class CarDetails extends StatelessWidget {
                 default:
               }
             }),
+        SizedBox(
+          height: 30,
+        ),
       ],
     );
   }
 
   Widget CustomBtn() {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(20),
         child: Container(
             height: 50,
-            width: 110,
+            width: Constant.width,
             color: Colors.yellow.shade600,
             child: Center(
                 child: Text(

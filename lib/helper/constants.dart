@@ -1,6 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+class Constant {
+  static final double height = Get.size.height;
+  static final double width = Get.size.width;
+}
+
 const String RIDECOUNT = "0";
 const String DBUSER = "user";
 const String DBUSER_PROFILE = "users";

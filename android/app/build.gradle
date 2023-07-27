@@ -54,8 +54,8 @@ android {
         applicationId 'com.drs.manzil'
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 2 // Change to a higher number
+        versionName "1.0.1" // Change to a higher number
         multiDexEnabled true
     }
 

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:Manzil/screens/drawer/webview/webview.dart';
 import 'package:Manzil/services/internetConn.dart';
 import 'package:animations/animations.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -59,7 +60,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
     super.initState();
     getName();
     c = Get.put(Controller());
-    // requestLocationPermission();
+    requestLocationPermission();
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
   }
 
@@ -86,8 +87,9 @@ class _VehicleSelectionState extends State<VehicleSelection> {
       Get.defaultDialog(
         title: "Requested Permission",
         titleStyle: TextStyle(fontSize: 18),
-        content:
-            Text("Grant Location Permission ", style: TextStyle(fontSize: 15)),
+        content: Text(
+            "Please, Grant Location Permission, For better accuracy and facility",
+            style: TextStyle(fontSize: 15)),
         onConfirm: () async {
           await openAppSettings();
         },
@@ -301,6 +303,30 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                     height: 20,
                   ),
                   ListTile(
+                    title: Row(
+                      children: [
+                        Icon(Icons.logout_sharp),
+                        SizedBox(
+                          width: 22,
+                        ),
+                        Text('Privacy Policy'.toUpperCase(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                              fontSize: 18,
+                              fontFamily: "SquidGames",
+                              letterSpacing: 2,
+                            )),
+                      ],
+                    ),
+                    onTap: () {
+                      Get.to(() => WebViewContainer());
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ListTile(
                     title: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -315,7 +341,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                         ),
                         DelayedDisplay(
                             delay: Duration(milliseconds: 600),
-                            child: Text("RDS",
+                            child: Text("Daksh",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black45,
@@ -441,7 +467,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                                       style: TextStyle(
                                         color: Colors.deepOrange,
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 19,
+                                        fontSize: Constant.width / 24,
                                         fontFamily: "SquidGames",
                                         letterSpacing: 1,
                                       ),
