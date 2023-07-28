@@ -439,18 +439,18 @@ class _PickUpPageState extends State<PickUpPage> {
             phoneRegex.hasMatch(PhoneController.text)) {
           controller.isClicked.value = true;
           // var a = await location.getLocation();
-          // Get.defaultDialog(
-          //   title: "Requested Permission",
-          //   titleStyle: TextStyle(fontSize: 18),
-          //   content: Text("Grant Location Permission ",
-          //       style: TextStyle(fontSize: 15)),
-          //   onConfirm: () async {
-          //     await location.getLocation();
-          //   },
-          // );
+          Get.defaultDialog(
+            title: "Requested Permission",
+            titleStyle: TextStyle(fontSize: 18),
+            content: Text("Grant Location Permission ",
+                style: TextStyle(fontSize: 15)),
+            onConfirm: () async {
+              await location.getLocation();
+            },
+          );
           // print("a $a");
           await Future.delayed(Duration(milliseconds: 600));
-          // print(location.address.value);
+          print(location.address.value);
           // setState(() {
           //   _isLoading = true;
           // });
@@ -463,7 +463,7 @@ class _PickUpPageState extends State<PickUpPage> {
               'Pickup District', "${PickUpControllerDistrict.text}");
           _pref.setString('Pickup Pincode', "${PickUpControllerPincode.text}");
           _pref.setString('Phone', "${PhoneController.text}");
-          // _pref.setString('address', "${location.address.value}");
+          _pref.setString('address', "${location.address.value}");
           print("${_pref.getString('Pickup Home')}");
           print("${_pref.getString('Pickup Landmark')}");
           print("${_pref.getString('Pickup District')}");
