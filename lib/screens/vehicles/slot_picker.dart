@@ -172,7 +172,7 @@ class _SlotPickerState extends State<SlotPicker> {
           child: Align(
             alignment: Alignment.bottomRight,
             child: Container(
-              width: 250,
+              width: Constants.width/1.3,
               height: 70,
               child: CupertinoButton.filled(
                 child: Row(

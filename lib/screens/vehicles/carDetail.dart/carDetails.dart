@@ -1,5 +1,6 @@
 import 'package:Manzil/Network/connectivity_provider.dart';
 import 'package:Manzil/Network/no_internet.dart';
+import 'package:Manzil/helper/constants.dart';
 import 'package:Manzil/screens/vehicles/ontroller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,31 +83,30 @@ class CarDetails extends StatelessWidget {
         //   height: 0,
         // ),
         Container(
-          height: size.height / 2.6,
-          width: size.width,
+          height: Constants.height/3.3,
+          width: Constants.width,
           child: Card(
               color: Colors.white.withOpacity(1),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      children: [
-                        Text(
-                            "1-100 KM = \u{20B9} 800\n\n1-150 KM = \u{20B9} 1000\n\n1-200 KM = \u{20B9} 1500\n\n1-250 KM = \u{20B9} 1800\n\n1-300 KM = \u{20B9} 2000\n\n1-350 KM = \u{20B9} 2200\n\n1-400 KM = \u{20B9} 2500\n",
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w400)),
-                      ],
+              child: SingleChildScrollView(
+                physics: ClampingScrollPhysics(parent: ClampingScrollPhysics()),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                          "1-100 KM = \u{20B9} 800\n\n1-150 KM = \u{20B9} 1000\n\n1-200 KM = \u{20B9} 1500\n\n1-250 KM = \u{20B9} 1800\n\n1-300 KM = \u{20B9} 2000\n\n1-350 KM = \u{20B9} 2200\n\n1-400 KM = \u{20B9} 2500\n",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w400)),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text("+ Fuel + Toll Tax",
-                        style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.w800)),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text("+ Fuel + Toll Tax",
+                          style: TextStyle(
+                              fontSize: 19, fontWeight: FontWeight.w800)),
+                    ),
+                  ],
+                ),
               )),
         ),
 
@@ -159,6 +159,9 @@ class CarDetails extends StatelessWidget {
                 default:
               }
             }),
+             SizedBox(
+          height: Constants.height/45,
+        ),
       ],
     );
   }
@@ -167,10 +170,10 @@ class CarDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(10),
         child: Container(
             height: 50,
-            width: 110,
+            width: Constants.width/1.5,
             color: Colors.yellow.shade600,
             child: Center(
                 child: Text(
@@ -189,8 +192,8 @@ class CarDetails extends StatelessWidget {
   Widget ImageContainer(String path) => ClipRRect(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(380)),
         child: Container(
-            height: Get.size.height / 2.7,
-            width: Get.size.width / 1,
+            height: Constants.height / 2.7,
+            width: Constants.width / 1,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [

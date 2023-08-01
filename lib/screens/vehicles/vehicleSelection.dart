@@ -470,7 +470,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                                       style: TextStyle(
                                         color: Colors.deepOrange,
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 19,
+                                        fontSize: Constants.width/20,
                                         fontFamily: "SquidGames",
                                         letterSpacing: 1,
                                       ),

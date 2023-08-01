@@ -388,7 +388,7 @@ class _DestinationPageState extends State<DestinationPage> {
           child: Text(
             "Set Destination",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

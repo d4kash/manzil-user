@@ -62,6 +62,11 @@ class _PickUpPageState extends State<PickUpPage> {
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
     scaffoldSate = widget.scaffoldState;
     location = Get.put(LocationController());
+    getLocationPermission();
+  }
+
+  getLocationPermission() async {
+    await location.getLocation();
   }
 
   @override
@@ -439,15 +444,15 @@ class _PickUpPageState extends State<PickUpPage> {
             phoneRegex.hasMatch(PhoneController.text)) {
           controller.isClicked.value = true;
           // var a = await location.getLocation();
-          Get.defaultDialog(
-            title: "Requested Permission",
-            titleStyle: TextStyle(fontSize: 18),
-            content: Text("Grant Location Permission ",
-                style: TextStyle(fontSize: 15)),
-            onConfirm: () async {
-              await location.getLocation();
-            },
-          );
+          // Get.defaultDialog(
+          //   title: "Requested Permission",
+          //   titleStyle: TextStyle(fontSize: 18),
+          //   content: Text("Grant Location Permission ",
+          //       style: TextStyle(fontSize: 15)),
+          //   onConfirm: () async {
+          //     await location.getLocation();
+          //   },
+          // );
           // print("a $a");
           await Future.delayed(Duration(milliseconds: 600));
           print(location.address.value);
@@ -499,7 +504,7 @@ class _PickUpPageState extends State<PickUpPage> {
           child: Text(
             "Set Pickup location",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

@@ -159,9 +159,13 @@ class _PaymentInfoState extends State<PaymentInfo> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Price:",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
-              Text("\u{20B9} $fare",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize:18)),
+                  // SizedBox(width: Constants.width/8,),
+                  SizedBox(width: Constants.width/3,),
+              Expanded(
+                child: Text("\u{20B9} $fare",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize:18)),
+              ),
             ],
           ),
           SizedBox(
@@ -171,9 +175,13 @@ class _PaymentInfoState extends State<PaymentInfo> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Total Fare:",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
-              Text(" \u{20B9} $fare",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)),
+                  SizedBox(width: Constants.width/5,),
+                  // SizedBox(width: Constants.width/46),
+              Expanded(
+                child: Text(" \u{20B9} $fare",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18)),
+              ),
             ],
           ),
           SizedBox(
@@ -184,7 +192,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
             child: Align(
               alignment: Alignment.bottomRight,
               child: Container(
-                  width: 245,
+                  width: Constants.width/1,
                   height: 70,
                   child: isButtonDisabled
                       ? Container()

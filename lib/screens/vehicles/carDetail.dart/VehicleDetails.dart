@@ -1,3 +1,4 @@
+import 'package:Manzil/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -82,38 +83,36 @@ class VehiclesDetails extends StatelessWidget {
             height: 3,
           ),
           Container(
-            height: size.height / 3,
-            width: size.width,
+            height: Constants.height / 3.2,
+            width: Constants.width,
             child: Card(
                 color: Colors.white.withOpacity(1),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Padding(
-                    //   padding: const EdgeInsets.all(12.0),
-                    //   child: Text("$VehicleDetails".toUpperCase(),
-                    //       style: TextStyle(
-                    //         fontSize: 29,
-                    //         fontWeight: FontWeight.w300,
-                    //         fontFamily: "SquidGames",
-                    //         letterSpacing: 2,
-                    //       )),
-                    // ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: [
-                          priceDecision(),
-                        ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Padding(
+                      //   padding: const EdgeInsets.all(12.0),
+                      //   child: Text("$VehicleDetails".toUpperCase(),
+                      //       style: TextStyle(
+                      //         fontSize: 29,
+                      //         fontWeight: FontWeight.w300,
+                      //         fontFamily: "SquidGames",
+                      //         letterSpacing: 2,
+                      //       )),
+                      // ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: priceDecision(),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )),
           ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            // child: Text("$VehicleDetails"),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(12.0),
+          //   // child: Text("$VehicleDetails"),
+          // ),
           SizedBox(
             height: 50,
           ),
@@ -158,25 +157,29 @@ class VehiclesDetails extends StatelessWidget {
     ));
   }
 
-  ListView listViewBuilder(List list) {
-    return ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: list.length,
-        shrinkWrap: true,
-        itemBuilder: (BuildContext context, int index) {
-          return Text(list[index],
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400));
-        });
+  Widget listViewBuilder(List list) {
+    return Container(
+      height: Constants.height/3,
+      child: ListView.builder(
+        
+          physics: BouncingScrollPhysics(),
+          itemCount: list.length,
+          shrinkWrap: true,
+          itemBuilder: (BuildContext context, int index) {
+            return Text(list[index],
+                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400));
+          }),
+    );
   }
 
   Widget CustomBtn() {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(20),
         child: Container(
             height: 50,
-            width: 110,
+            width: Constants.width/2,
             color: Colors.yellow.shade600,
             child: Center(
                 child: Text(
@@ -195,8 +198,8 @@ class VehiclesDetails extends StatelessWidget {
   Widget ImageContainer(String path) => ClipRRect(
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(380)),
         child: Container(
-            height: Get.size.height / 2.7,
-            width: Get.size.width / 1,
+            height: Constants.height / 2.7,
+            width: Constants.width / 1,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [

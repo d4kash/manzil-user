@@ -1,3 +1,4 @@
+import 'package:Manzil/helper/constants.dart';
 import 'package:Manzil/screens/vehicles/vehicleSelection.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
@@ -172,7 +173,7 @@ class CarSelect extends StatelessWidget {
                                         "${VehicleRate[index]}",
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 20,
+                                          fontSize: Constants.width/20,
                                           color: Colors.deepOrange,
                                           fontFamily: "SquidGames",
                                           letterSpacing: 1,
@@ -300,10 +301,10 @@ class CarSelect extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 8.0),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(20),
           child: Container(
               height: 50,
-              width: 110,
+              width: Constants.width/3,
               color: Colors.yellow.shade600,
               child: Center(
                   child: Text(

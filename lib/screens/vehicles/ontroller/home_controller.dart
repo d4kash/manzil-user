@@ -15,12 +15,22 @@ class LocationController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    await getLocation();
+   
   }
 
   @override
   void onReady() {
     super.onReady();
+    //   Get.defaultDialog(
+    //         title: "Requested Permission",
+    //         titleStyle: TextStyle(fontSize: 18),
+    //         content: Text("Grant Location Permission,\nwhich will help both of us, for smooth journey ",
+    //             style: TextStyle(fontSize: 15)),
+    //         onConfirm: () async {
+             
+    // await getLocation();
+    //         },
+    //       );
   }
 
   @override
@@ -38,6 +48,7 @@ class LocationController extends GetxController {
       // Location services are not enabled don't continue
       // accessing the position and request users of the
       // App to enable the location services.
+      
       await Geolocator.openLocationSettings();
       return Future.error('Location services are disabled.');
     }
