@@ -75,7 +75,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:58615859521:android:63b179d4d46fd33986b9c0",
         "android_client_info": {
-          "package_name": "com.example.user"
+          "package_name": "com.drs.manzil"
         }
       },
       "oauth_client": [
@@ -83,7 +83,7 @@
           "client_id": "58615859521-dccanibhhid9r9i23j9h45hqc5rlcjt9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.user",
+            "package_name": "com.drs.manzil",
             "certificate_hash": "14989ffcdc665d6473ff8153355906ef6954a050"
           }
         },

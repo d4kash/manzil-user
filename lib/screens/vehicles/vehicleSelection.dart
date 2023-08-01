@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:Manzil/services/internetConn.dart';
+import 'package:Manzil/webview/webview.dart';
 import 'package:animations/animations.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delayed_display/delayed_display.dart';
@@ -59,7 +60,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
     super.initState();
     getName();
     c = Get.put(Controller());
-    // requestLocationPermission();
+    requestLocationPermission();
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
   }
 
@@ -300,6 +301,9 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                   SizedBox(
                     height: 20,
                   ),
+                  SizedBox(
+                    height: Constants.height / 4,
+                  ),
                   ListTile(
                     title: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -313,9 +317,10 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                         SizedBox(
                           height: 5,
                         ),
+
                         DelayedDisplay(
                             delay: Duration(milliseconds: 600),
-                            child: Text("RDS",
+                            child: Text("Daksh",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black45,
@@ -325,7 +330,31 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                                 )))
                       ],
                     ),
-                  )
+                  ),
+                  Divider(
+                    height: 1,
+                  ),
+                  // ListTile(
+                  //   title: Row(
+                  //     children: [
+                  //       Icon(Icons.privacy_tip),
+                  //       SizedBox(
+                  //         width: 22,
+                  //       ),
+                  //       Text('Privacy Policy'.toUpperCase(),
+                  //           style: TextStyle(
+                  //             fontWeight: FontWeight.w600,
+                  //             color: Colors.black87,
+                  //             fontSize: 15,
+                  //             fontFamily: "SquidGames",
+                  //             letterSpacing: 2,
+                  //           )),
+                  //     ],
+                  //   ),
+                  //   onTap: () {
+                  //     Get.to(() => CustomWebView());
+                  //   },
+                  // ),
                 ],
               ),
             )),
