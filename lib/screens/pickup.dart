@@ -62,7 +62,7 @@ class _PickUpPageState extends State<PickUpPage> {
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
     scaffoldSate = widget.scaffoldState;
     location = Get.put(LocationController());
-    getLocationPermission();
+    // getLocationPermission();
   }
 
   getLocationPermission() async {

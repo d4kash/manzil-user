@@ -60,8 +60,19 @@ class _VehicleSelectionState extends State<VehicleSelection> {
     super.initState();
     getName();
     c = Get.put(Controller());
-    requestLocationPermission();
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
+    requestLocationPermission();
+  }
+
+  void dialogDisclosureForLocation() {
+    Get.defaultDialog(
+        title: "Requested Permission",
+        titleStyle: TextStyle(fontSize: 18),
+        content: Text(
+            "Grant Location Permission,\nwhich will help both of us, for smooth journey ",
+            style: TextStyle(fontSize: 15)),
+        onConfirm: () {},
+        onCancel: () => Get.back());
   }
 
   @override
@@ -75,23 +86,49 @@ class _VehicleSelectionState extends State<VehicleSelection> {
 
     bool isLocation = serviceStatusLocation == ServiceStatus.enabled;
     print(isLocation);
-    final status = await Permission.locationWhenInUse.request();
+    var status;
+    Get.defaultDialog(
+      title: "Requested Location Permission",
+      titleStyle: TextStyle(fontSize: 18),
+      content: Text(
+          "Grant Location Permission,\nwhich will help both of us, for smooth journey  ",
+          style: TextStyle(fontSize: 15)),
+      onConfirm: () async {
+        status = await Permission.locationWhenInUse.request();
+        Get.back();
+      },
+      onCancel: () => Get.back(),
+    );
 
     if (status == PermissionStatus.granted) {
       print('Permission Granted');
     } else if (status == PermissionStatus.denied) {
       print('Permission denied');
-      Get.defaultDialog();
+      Get.defaultDialog(
+        title: "Requested Location Permission",
+        titleStyle: TextStyle(fontSize: 18),
+        content: Text(
+            "Grant Location Permission,\nwhich will help both of us, for smooth journey  ",
+            style: TextStyle(fontSize: 15)),
+        onConfirm: () async {
+          status = await Permission.locationWhenInUse.request();
+          Get.back();
+        },
+        onCancel: () => Get.back(),
+      );
     } else if (status == PermissionStatus.permanentlyDenied) {
       print('Permission Permanently Denied');
       Get.defaultDialog(
-        title: "Requested Permission",
+        title: "Requested Location Permission",
         titleStyle: TextStyle(fontSize: 18),
-        content:
-            Text("Grant Location Permission ", style: TextStyle(fontSize: 15)),
+        content: Text(
+            "Grant Location Permission,\nwhich will help both of us, for smooth journey",
+            style: TextStyle(fontSize: 15)),
         onConfirm: () async {
           await openAppSettings();
+          Get.back();
         },
+        onCancel: () => Get.back(),
       );
       // await openAppSettings();
     }
@@ -470,7 +507,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                                       style: TextStyle(
                                         color: Colors.deepOrange,
                                         fontWeight: FontWeight.w400,
-                                        fontSize: Constants.width/20,
+                                        fontSize: Constants.width / 20,
                                         fontFamily: "SquidGames",
                                         letterSpacing: 1,
                                       ),

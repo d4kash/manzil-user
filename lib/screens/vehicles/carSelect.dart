@@ -173,7 +173,7 @@ class CarSelect extends StatelessWidget {
                                         "${VehicleRate[index]}",
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
-                                          fontSize: Constants.width/20,
+                                          fontSize: Constants.width / 23,
                                           color: Colors.deepOrange,
                                           fontFamily: "SquidGames",
                                           letterSpacing: 1,
@@ -304,7 +304,7 @@ class CarSelect extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           child: Container(
               height: 50,
-              width: Constants.width/3,
+              width: Constants.width / 3,
               color: Colors.yellow.shade600,
               child: Center(
                   child: Text(
