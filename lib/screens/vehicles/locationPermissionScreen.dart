@@ -38,7 +38,7 @@ class LocationPermissionScreen extends StatelessWidget {
         ),
         Center(
           child: Text(
-            'Sarthi Booking collects location data to enable doorstep delivery of you, & exact roadmap of route, and save time',
+            'Sarthi Booking collects location data when in use and also \“when the app is closed\” to 1. enable doorstep delivery of you, & 2.exact roadmap of route in background only when vehicle is booked, and save time',
             style: TextStyle(
                 fontWeight: FontWeight.w400, fontSize: Constants.height / 45),
           ),
