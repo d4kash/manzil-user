@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:Manzil/screens/vehicles/locationPermissionScreen.dart';
 import 'package:Manzil/services/internetConn.dart';
 import 'package:Manzil/webview/webview.dart';
 import 'package:animations/animations.dart';
@@ -61,18 +62,8 @@ class _VehicleSelectionState extends State<VehicleSelection> {
     getName();
     c = Get.put(Controller());
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
-    requestLocationPermission();
-  }
 
-  void dialogDisclosureForLocation() {
-    Get.defaultDialog(
-        title: "Requested Permission",
-        titleStyle: TextStyle(fontSize: 18),
-        content: Text(
-            "Grant Location Permission,\nwhich will help both of us, for smooth journey ",
-            style: TextStyle(fontSize: 15)),
-        onConfirm: () {},
-        onCancel: () => Get.back());
+    requestLocationPermission();
   }
 
   @override
@@ -90,14 +81,17 @@ class _VehicleSelectionState extends State<VehicleSelection> {
     Get.defaultDialog(
       title: "Requested Location Permission",
       titleStyle: TextStyle(fontSize: 18),
-      content: Text(
-          "Grant Location Permission,\nwhich will help both of us, for smooth journey  ",
-          style: TextStyle(fontSize: 15)),
-      onConfirm: () async {
-        status = await Permission.locationWhenInUse.request();
+      content: LocationPermissionScreen(onPressed: () async {
         Get.back();
-      },
-      onCancel: () => Get.back(),
+        status = await Permission.locationWhenInUse.request();
+      }),
+      // Text(
+      //     "Grant Location Permission,\nwhich will help both of us, for smooth journey",
+      //     style: TextStyle(fontSize: 15)),
+      // onConfirm: () async {
+
+      // },
+      // onCancel: () => Get.back(),
     );
 
     if (status == PermissionStatus.granted) {
@@ -107,29 +101,20 @@ class _VehicleSelectionState extends State<VehicleSelection> {
       Get.defaultDialog(
         title: "Requested Location Permission",
         titleStyle: TextStyle(fontSize: 18),
-        content: Text(
-            "Grant Location Permission,\nwhich will help both of us, for smooth journey  ",
-            style: TextStyle(fontSize: 15)),
-        onConfirm: () async {
-          status = await Permission.locationWhenInUse.request();
+        content: LocationPermissionScreen(onPressed: () async {
           Get.back();
-        },
-        onCancel: () => Get.back(),
+          status = await Permission.locationWhenInUse.request();
+        }),
       );
     } else if (status == PermissionStatus.permanentlyDenied) {
       print('Permission Permanently Denied');
       Get.defaultDialog(
-        title: "Requested Location Permission",
-        titleStyle: TextStyle(fontSize: 18),
-        content: Text(
-            "Grant Location Permission,\nwhich will help both of us, for smooth journey",
-            style: TextStyle(fontSize: 15)),
-        onConfirm: () async {
-          await openAppSettings();
-          Get.back();
-        },
-        onCancel: () => Get.back(),
-      );
+          title: "Requested Location Permission",
+          titleStyle: TextStyle(fontSize: 18),
+          content: LocationPermissionScreen(onPressed: () async {
+            Get.back();
+            status = await Permission.locationWhenInUse.request();
+          }));
       // await openAppSettings();
     }
   }
@@ -137,15 +122,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    // if (PermissionStatus.denied == true ||
-    //     PermissionStatus.permanentlyDenied == true) {
-    //   Get.defaultDialog(
-    //     title: "Required Permission",
-    //     titleStyle: TextStyle(fontSize: 15),
-    //     content: Text("Location Permission is required for Location you"),
-    //     onConfirm: () => requestLocationPermission(),
-    //   );
-    // }
+
     return WillPopScope(
       onWillPop: () => showExitPopup(context),
       child: SafeArea(
@@ -211,7 +188,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                                 letterSpacing: 5,
                                 height: 3)),
                         SizedBox(
-                          height: 20,
+                          height: Constants.height / 46,
                         ),
                         Row(
                           children: [
@@ -462,7 +439,7 @@ class _VehicleSelectionState extends State<VehicleSelection> {
                               OpenContainer(
                                   transitionType:
                                       ContainerTransitionType.fadeThrough,
-                                  closedColor: Theme.of(context).cardColor,
+                                  closedColor: Colors.orange,
                                   closedElevation: 0.0,
                                   openElevation: 4.0,
                                   transitionDuration:

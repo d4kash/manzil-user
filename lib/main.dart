@@ -9,6 +9,7 @@ import 'Network/connectivity_provider.dart';
 import 'bindings/bindings.dart';
 import 'chatCode/Authenticate/Autheticate.dart';
 import 'chatCode/Screens/HomeScreen.dart';
+import 'screens/vehicles/locationPermissionScreen.dart';
 import 'splashScreen/splash.dart';
 
 void main() async {
@@ -39,13 +40,19 @@ class MyApp extends StatelessWidget {
       ],
       child: GetMaterialApp(
         initialBinding: InitialBindings(),
+        initialRoute: '/',
         title: 'Manzil',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
+          useMaterial3: true,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.deepOrange,
+          ),
         ),
-        home: SplashScreen(),
+        // home: SplashScreen(),
         routes: {
+          '/': (context) => SplashScreen(),
           '/Home': (context) => VehicleSelection(),
           '/ReqRide': (context) => RideHistory(),
           '/chat': (context) => ChatHomeScreen(),

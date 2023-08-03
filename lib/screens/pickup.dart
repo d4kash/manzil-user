@@ -48,7 +48,7 @@ class _PickUpPageState extends State<PickUpPage> {
   final RegExp aadharRegex =
       new RegExp(r'^([2-9]){1}\d([0-9]{3})\d([0-9]{3})\d([0-9]{2})$');
   //!Controller
-  late LocationController location;
+  // late LocationController location;
   @override
   void initState() {
     PickUpControllerHome = TextEditingController();
@@ -61,13 +61,13 @@ class _PickUpPageState extends State<PickUpPage> {
     c = Get.put(Controller());
     Provider.of<ConnectivityProvider>(context, listen: false).startMonitoring();
     scaffoldSate = widget.scaffoldState;
-    location = Get.put(LocationController());
+    // location = Get.put(LocationController());
     // getLocationPermission();
   }
 
-  getLocationPermission() async {
-    await location.getLocation();
-  }
+  // getLocationPermission() async {
+  //   await location.getLocation();
+  // }
 
   @override
   void dispose() {
@@ -455,7 +455,7 @@ class _PickUpPageState extends State<PickUpPage> {
           // );
           // print("a $a");
           await Future.delayed(Duration(milliseconds: 600));
-          print(location.address.value);
+          // print(location.address.value);
           // setState(() {
           //   _isLoading = true;
           // });
@@ -468,7 +468,7 @@ class _PickUpPageState extends State<PickUpPage> {
               'Pickup District', "${PickUpControllerDistrict.text}");
           _pref.setString('Pickup Pincode', "${PickUpControllerPincode.text}");
           _pref.setString('Phone', "${PhoneController.text}");
-          _pref.setString('address', "${location.address.value}");
+          _pref.setString('address', "location.address.value");
           print("${_pref.getString('Pickup Home')}");
           print("${_pref.getString('Pickup Landmark')}");
           print("${_pref.getString('Pickup District')}");

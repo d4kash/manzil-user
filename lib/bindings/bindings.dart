@@ -6,7 +6,7 @@ class InitialBindings extends Bindings {
   @override
   void dependencies() {
     // TODO: implement dependencies
-    Get.lazyPut(() => LocationController());
+    // Get.lazyPut(() => LocationController());
     Get.lazyPut(() => Controller());
   }
 }
