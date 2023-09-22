@@ -1,16 +1,31 @@
 # user
 
-A new Flutter project.
 
-## Getting Started
+<a href='https://play.google.com/store/apps/details?id=com.drs.manzil'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="80px"/></a>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Main features
+- Material design
+- Completely cross platform
+- List view for vehicles
+- Multiple vehicles
+- Database encryption
+- Used Firebase
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Planned features
+- [ ] Add search for vehicles
+
+
+## Compiling the app
+Before anything, be sure to have a working flutter sdk setup.
+
+Be sure to disable signing on build.gradle or change keystore to sign the app.
+
+For now the required flutter channel is master, so issue those two commands before starting building:
+```
+~$ flutter channel master
+~$ flutter upgrade
+```
+
+After that, building is simple as this:
