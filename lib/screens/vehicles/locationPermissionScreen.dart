@@ -21,7 +21,7 @@ class LocationPermissionScreen extends StatelessWidget {
                 onPressed: () => Get.to(() => CustomWebView()),
               )),
         ),
-        Icon(
+        FaIcon(
           FontAwesomeIcons.locationDot,
           color: Colors.deepOrange,
           size: 80,
@@ -46,7 +46,7 @@ class LocationPermissionScreen extends StatelessWidget {
         SizedBox(
           height: 40,
         ),
-        Icon(
+        FaIcon(
           FontAwesomeIcons.mapLocationDot,
           size: 80,
           color: Colors.deepOrange,

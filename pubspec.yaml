@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 3.5.0
+version: 3.5.1+10
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -28,36 +28,37 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animations: ^2.0.1
-  cloud_firestore: ^4.8.2
-  connectivity: ^3.0.6
+  cloud_firestore: ^6.2.0
+  # connectivity: ^3.0.6
+  connectivity_plus: ^7.1.0
   cupertino_icons: ^1.0.2
   delayed_display: ^2.0.0
-  firebase_auth: ^4.6.3
-  firebase_core: ^2.14.0
-  firebase_storage: ^11.2.4
+  firebase_auth: ^6.3.0
+  firebase_core: ^4.6.0
+  firebase_storage: ^13.2.0
   flutter:
     sdk: flutter
-  fluttertoast: ^8.0.8
+  fluttertoast: ^9.0.0
   
-  font_awesome_flutter: ^10.4.0
+  font_awesome_flutter: ^11.0.0
   # geocoding: ^2.0.1
   # geolocator: ^9.0.2
   get: ^4.3.8
-  google_fonts: ^4.0.4
+  google_fonts: ^8.0.2
   image_picker: ^1.0.1
   internet_connection_checker: ^1.0.0+1
-  intl: ^0.18.1
-  lottie: ^2.3.2
-  permission_handler: ^10.4.3
-  provider: ^6.0.1
+  intl: ^0.20.2
+  lottie: ^3.3.2
+  permission_handler: ^12.0.1
+  provider: ^6.1.5+1
   shared_preferences: ^2.0.8
-  showcaseview: ^2.0.3
-  uuid: ^3.0.4
+  showcaseview: ^5.0.1
+  uuid: ^4.5.3
   webview_flutter: ^4.2.2
 
 dev_dependencies:
-  flutter_launcher_icons: ^0.13.1
-  flutter_lints: ^2.0.2
+  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^6.0.0
   flutter_native_splash: ^2.2.19
 
   flutter_test:
